@@ -75,7 +75,7 @@ public:
     void rearrange();
     void archivate();
     void genre_compare(book_store book);
-    static int genre_len(book_store book); //статический метод
+    static int genre_len(book_store book); //статический метод - определение длины жанра
     int predictable_profit(int* a);
     int predictable_profit(int& a);
     friend int predictable_popularity(book_store book);
