@@ -1,5 +1,5 @@
 ﻿// PLab8.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//Дружественные функции, перегрузки, возврат из метода по * и &, класс std::string
+//Статические поля и методы
 
 #include <iostream>
 #include <conio.h>
