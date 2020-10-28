@@ -1,0 +1,11 @@
+﻿  PLab8.cpp
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(155,16): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(406,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(408,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(411,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(415,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(419,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'special'
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(234,21): warning C4101: 'm': unreferenced local variable
+C:\Users\Ангелина\source\repos\IIISemester\PLab8\PLab8\PLab8.cpp(235,40): warning C4101: 's4': unreferenced local variable
+  PLab8.vcxproj -> C:\Users\Ангелина\source\repos\IIISemester\PLab8\Debug\PLab8.exe
