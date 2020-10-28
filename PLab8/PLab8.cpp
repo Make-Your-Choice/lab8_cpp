@@ -287,7 +287,7 @@ int main()
     printf("\nFirst book\n");
     book1.get();
     book1.output();
-    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len(book1));
+    printf("\nLength of the 'genre' for the first book: %d\n", book_store::genre_len(book1));
     book1.predictable_profit(&k);
     printf("\nPredictable profit for the first book (using *): %d\n", k);
     p = predictable_popularity(book1);
