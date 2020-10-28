@@ -75,13 +75,16 @@ public:
     void rearrange();
     void archivate();
     void genre_compare(book_store book);
-    int genre_len();
+    static int genre_len(book_store book); //статический метод
     int predictable_profit(int* a);
     int predictable_profit(int& a);
     friend int predictable_popularity(book_store book);
     int summarize(int a);
+    static int space_left; //статическое поле - оставшееся место в магазине
     void reduce_bonus();
 };
+
+int book_store::space_left = 50;
 
 book_store::book_store(special spec_offer[nmax]) //конструктор с параметром
 {
@@ -200,9 +203,9 @@ int book_store::summarize(int a) //сложение количества дву�
     return this->num_stock + a;
 }
 
-int book_store::genre_len() //вычисление длины строки 'жанр'
+int book_store::genre_len(book_store book) //вычисление длины строки 'жанр'
 {
-    return genre.length();
+    return book.genre.length();
 }
 
 int book_store::predictable_profit(int* a) //подсчет ожидаемой прибыли по указателю
@@ -221,6 +224,11 @@ int predictable_popularity(book_store book) //подсчет ожидаемой 
 {
     return book.num_stock * 5 + book.popularity;
 }
+
+/*int book_store::reduce_space_left(book_store book)
+{
+    return book.
+}*/
 
 void book_store::reduce_bonus() //сокращение числа бонусов
 {
@@ -279,11 +287,12 @@ int main()
     printf("\nFirst book\n");
     book1.get();
     book1.output();
-    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len());
+    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len(book1));
     book1.predictable_profit(&k);
     printf("\nPredictable profit for the first book (using *): %d\n", k);
     p = predictable_popularity(book1);
     printf("\nPredictable popularity for the first book (friend fuction): %d\n", p);
+    printf("\nSpace left in the store: %d\n", book1.space_left);
 
     //динамическая переменная
 
@@ -338,6 +347,9 @@ int main()
     p = 0;
     p = predictable_popularity(*book2);
     printf("\nPredictable popularity for the second book (friend fuction): %d\n", p);
+    book2->space_left = 40;
+    printf("\nSpace left in the store (using 1 book): %d\n", book1.space_left);
+    printf("\nSpace left in the store (using 2 book): %d\n", book2->space_left);
     delete book2;
     book2 = NULL;
 
