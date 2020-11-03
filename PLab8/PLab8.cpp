@@ -75,12 +75,14 @@ public:
     void rearrange();
     void archivate();
     void genre_compare(book_store book);
-    static int genre_len(book_store book); //статический метод - определение длины жанра
+    //static int genre_len(book_store book); //статический метод - определение длины жанра
+    int genre_len(book_store book); //статический метод - определение длины жанра
     int predictable_profit(int* a);
     int predictable_profit(int& a);
     friend int predictable_popularity(book_store book);
     int summarize(int a);
     static int space_left; //статическое поле - оставшееся место в магазине
+    static int reduce_space_left();
     void reduce_bonus();
 };
 
@@ -225,10 +227,10 @@ int predictable_popularity(book_store book) //подсчет ожидаемой 
     return book.num_stock * 5 + book.popularity;
 }
 
-/*int book_store::reduce_space_left(book_store book)
+int book_store::reduce_space_left()
 {
-    return book.
-}*/
+    return space_left - 1;
+}
 
 void book_store::reduce_bonus() //сокращение числа бонусов
 {
@@ -287,12 +289,13 @@ int main()
     printf("\nFirst book\n");
     book1.get();
     book1.output();
-    printf("\nLength of the 'genre' for the first book: %d\n", book_store::genre_len(book1));
+    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len(book1)/*book_store::genre_len(book1)*/);
     book1.predictable_profit(&k);
     printf("\nPredictable profit for the first book (using *): %d\n", k);
     p = predictable_popularity(book1);
     printf("\nPredictable popularity for the first book (friend fuction): %d\n", p);
     printf("\nSpace left in the store: %d\n", book1.space_left);
+    printf("\nReduced space left in the store on 1: %d\n", book_store::reduce_space_left());
 
     //динамическая переменная
 
