@@ -75,14 +75,13 @@ public:
     void rearrange();
     void archivate();
     void genre_compare(book_store book);
-    //static int genre_len(book_store book); //статический метод - определение длины жанра
-    int genre_len(book_store book); //статический метод - определение длины жанра
+    int genre_len(book_store book); //определение длины жанра
     int predictable_profit(int* a);
     int predictable_profit(int& a);
     friend int predictable_popularity(book_store book);
     int summarize(int a);
     static int space_left; //статическое поле - оставшееся место в магазине
-    static int reduce_space_left();
+    static int reduce_space_left(); //статичекий метод - уменьшение оставшегося места
     void reduce_bonus();
 };
 
@@ -289,7 +288,7 @@ int main()
     printf("\nFirst book\n");
     book1.get();
     book1.output();
-    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len(book1)/*book_store::genre_len(book1)*/);
+    printf("\nLength of the 'genre' for the first book: %d\n", book1.genre_len(book1));
     book1.predictable_profit(&k);
     printf("\nPredictable profit for the first book (using *): %d\n", k);
     p = predictable_popularity(book1);
